@@ -2,3 +2,5 @@
 *.toc
 *.pdf
 *.aux
+*.bcf
+*.run.xml
