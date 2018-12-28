@@ -12,6 +12,8 @@ clean:
 	rm report.aux
 	rm report.bcf
 	rm report.run.xml
+	rm report.bbl
+	rm report.blg
 
 report.pdf: report.ltx
 	xelatex --halt-on-error report.ltx
