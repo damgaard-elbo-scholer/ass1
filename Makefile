@@ -1,9 +1,7 @@
 
-.PHONY: all draft clean
+.PHONY: all clean
 
 all: report.pdf
-
-draft: report.aux
 
 clean:
 	rm report.log
@@ -20,6 +18,7 @@ report.pdf: report.aux report.bbl
 
 report.aux: report.ltx
 	xelatex -halt-on-error -no-pdf report.ltx
+	rm report.xdv
 
 report.bbl: report.aux refs.bib
 	biber report
