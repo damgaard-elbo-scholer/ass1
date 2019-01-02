@@ -1,10 +1,13 @@
 
-.PHONY: all clean
+.PHONY: all clean draft
 
 all:
 	xelatex -halt-on-error -no-pdf report.ltx
 	rm report.xdv
 	biber report
+	xelatex -halt-on-error report.ltx
+
+draft:
 	xelatex -halt-on-error report.ltx
 
 # all: report.pdf
