@@ -1,9 +1,9 @@
 
 .PHONY: all draft clean
 
-all: report.pdf report.bbl
+all: report.pdf
 
-draft: report.pdf
+draft: report.aux
 
 clean:
 	rm report.log
@@ -15,8 +15,11 @@ clean:
 	rm report.bbl
 	rm report.blg
 
-report.pdf: report.ltx
-	xelatex --halt-on-error report.ltx
+report.pdf: report.aux report.bbl
+	xelatex -halt-on-error report.ltx
 
-report.bbl: report.pdf refs.bib
+report.aux: report.ltx
+	xelatex -halt-on-error -no-pdf report.ltx
+
+report.bbl: report.aux refs.bib
 	biber report
