@@ -1,25 +1,108 @@
-\documentclass{memoir}
+\documentclass[a4paper, onecolumn]{memoir}
 
-\usepackage[english]{babel}
-\usepackage[english]{isodate}
+%%%% Packages
 
-\usepackage[backend=biber]{biblatex}
+\usepackage[english]{babel} % language settings
+\usepackage[english]{isodate} % YYYY-MM-DD date format
+
+\usepackage{amsmath, amsthm, amssymb} % math stuff
+
+\usepackage{fontenc} % nicer fonts
+\usepackage{listings} % nice code formatting
+\usepackage[normalem]{ulem} % good underlines
+\usepackage{contour} % text contouring
+
+\usepackage{graphicx} % insert images
+\usepackage{xcolor} % nice colors
+\usepackage{tikz} % general purpose diagrams
+\usepackage{tikz-cd} % commutative diagrams
+
+\usepackage[backend=biber]{biblatex} % reference engine
+\usepackage{imakeidx} % index
+
+\usepackage{hyperref} % hyperlinks
+\usepackage{memhfixc} % hyperlinks
+
+
+%%%% Settings
+
+% Theorems
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{lem}[thm]{Lemma}
+
+% Nice fonts
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmonofont[scale=0.8]{Ubuntu Mono}
+
+% Nice underlines
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\ulnice}[1]{%
+\uline{\phantom{#1}}%
+\llap{\contour{white}{#1}}%
+}
+
+% Link formatting
+\hypersetup{
+  colorlinks=true,
+  linktocpage=true,
+  breaklinks=true,
+  linkcolor=red!50,
+  citecolor=green!50,
+  filecolor=cyan!50,
+  urlcolor=blue!50,
+  frenchlinks=true,
+}
+
+% Programming code
+\lstset{
+  % language=Haskell,
+  backgroundcolor=\color{white},
+  basicstyle=\footnotesize\ttfamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{blue!60!white}\slshape,
+  %deletekeywords={},
+  %escapeinside={}{},
+  extendedchars=false,
+  firstnumber=1,
+  frame=single,
+  %identifier=,
+  keepspaces=true,
+  keywordstyle=\color{blue!50!black}\bfseries,
+  %morekeywords={},
+  numbers=left,
+  numbersep=10pt,
+  numberstyle=\tiny\color{black!50}\rmfamily,
+  rulecolor=\color{black!50},
+  showspaces=false,
+  showstringspaces=true,
+  showtabs=true,
+  stepnumber=1,
+  stringstyle=\color{orange!60},
+  tabsize=8,
+  title=\lstname,
+  xleftmargin=1em,
+}
+
+% Nice dates
+\isodate\isodash{--}
+\date{\protect\today}
+
+%%%% Document
+
 \addbibresource{refs.bib}
 
 \title{NO TITLE}
 \author{Karl D. Asmussen}
 
-\isodate\isodash{--}%
-\date{\protect\today}
-
 \begin{document} 
 \mainmatter
 \maketitle
 \tableofcontents*
-
-\cite{LOL}
-
-%\appendix
 
 \backmatter
 \printbibliography
