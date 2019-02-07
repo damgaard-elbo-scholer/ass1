@@ -7,4 +7,4 @@
 *.blg
 *.bbl
 *.xdv
-*.aux.sum
+*.out

@@ -19,3 +19,4 @@ clean:
 	rm report.run.xml
 	rm report.bbl
 	rm report.blg
+	rm report.out
