@@ -32,8 +32,16 @@
 \newtheorem{lem}[thm]{Lemma}
 
 % Nice fonts
-\setmainfont{Linux Libertine O}
-\setsansfont{Linux Biolinum O}
+\setmainfont[
+  SlantedFont={Linux Libertine O},
+  SlantedFeatures={FakeSlant=0.15},
+  BoldSlantedFeatures={FakeSlant=0.15},
+]{Linux Libertine O}
+\setsansfont[
+  SlantedFont={Linux Biolinum O},
+  SlantedFeatures={FakeSlant=0.15},
+  BoldSlantedFeatures={FakeSlant=0.15},
+]{Linux Biolinum O}
 \setmonofont[Scale=0.8]{Ubuntu Mono}
 
 % Nice underlines
@@ -104,19 +112,19 @@
 \maketitle
 \tableofcontents*
 
-\include{1-12.ltx}
+\input{1-12}
 
-\include{1-16b.ltx}
+\input{1-16b}
 
-\include{1-29b.ltx}
+\input{1-29b}
 
-\include{1-44.ltx}
+\input{1-44}
 
-\include{1-50.ltx}
+\input{1-50}
 
-\include{1-53.ltx}
+\input{1-53}
 
-\include{1-71.ltx}
+\input{1-71}
 
 \backmatter
 \printbibliography
