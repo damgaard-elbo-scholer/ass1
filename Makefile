@@ -20,3 +20,4 @@ clean:
 	rm report.bbl
 	rm report.blg
 	rm report.out
+	rm *.aux
